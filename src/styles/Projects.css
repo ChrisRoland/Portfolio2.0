@@ -1,0 +1,166 @@
+.projects {
+    column-gap: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 6rem 0 10rem;
+}
+
+.project-container-inner {
+    align-items: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-number {
+    align-self: flex-end;
+    margin-bottom: 0.5rem;
+}
+
+.project-number > img {
+    height: 8rem;
+    text-align: right;
+    display: none;
+}
+
+.project-image {
+    display: flex;
+    position: relative;
+}
+
+.project-image .filter {
+    display: flex;
+    border-radius: var(--border-radius);
+    filter: grayscale(100%) contrast(1) brightness(90%);
+    mix-blend-mode: lighten;
+    transition: var(--transition);
+}
+
+.project-image .filter:hover {
+    filter: none;
+    mix-blend-mode: normal;
+}
+
+.filter > img {
+    max-height: calc(184px * 1.45);
+    max-width: calc(326px * 1.45);
+}
+
+.image-link-overlay {
+    background-color: var(--grayish-pink-transperent);
+}
+
+.project-title-and-description {
+    display: flex;
+    flex-direction: column;
+    width: 40rem;
+    max-width: 30rem;
+}
+
+.project-title {
+    background-color: var(--warm-brown);
+    box-shadow: -0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.514);
+    border-radius: 0.25rem;
+    color: var(--white);
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+.project-description {
+    background-color: var(--white);
+    box-shadow: -0.2rem 0.2rem 0.6rem rgba(0, 0, 0, 0.514);
+    border-radius: 0.25rem;
+    color: var(--warm-brown);
+    margin-top: 1rem;
+    padding: 2rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.project-description p {
+    font-weight: var(--fw-medium);
+}
+
+.project-title > h3 {
+    font-size: 1.8rem;
+    font-weight: var(--fw-semibold);
+}
+
+.project-links {
+    align-self: center;
+    display: flex;
+    margin-top: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .project-image .filter > img {
+        width: 25rem;
+    }
+
+    .project-title-and-description {
+        width: 25rem;
+    }
+
+    .project-description {
+        font-size: var(--fs-sl);
+    }
+}
+
+@media screen and (max-width: 644px) {
+    .project-image .filter > img {
+        width: 22rem;
+    }
+
+    .project-title-and-description {
+        width: 22rem;
+    }
+
+    .project-title > h3 {
+        font-size: 1.4rem;
+    }
+
+    .project-number > img {
+        height: 5rem;
+        text-align: right;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .project-container-inner {
+        width: -moz-fit-content;
+        width: fit-content;
+    }
+}
+
+@media screen and (max-width: 438px) {
+    .project-container:last-of-type {
+        margin-bottom: 5rem;
+    }
+    .project-container,
+    .project-image {
+        justify-content: center;
+    }
+
+    .project-image .filter > img {
+        width: 17.875rem;
+    }
+
+    .project-title-and-description {
+        width: 17.875rem;
+    }
+
+    .project-title > h3 {
+        font-size: var(--fs-l);
+    }
+
+    .project-description {
+        font-size: var(--fs-xsl);
+    }
+}

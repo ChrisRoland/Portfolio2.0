@@ -1,3 +1,3 @@
-# Praise-Portfolio
+# Chris's Portfolio
 My Portfolio Website
-https://praiseimmanuel.netlify.app/
+

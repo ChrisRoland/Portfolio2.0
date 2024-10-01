@@ -1,0 +1,217 @@
+.header {
+    background-color: var( --warm-brown);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #ffffff08;
+    display: flex;
+    height: 4.375rem;
+    justify-content: space-between;
+    padding: 2rem 5rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 111;
+}
+
+.nav {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-links {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.hamburger {
+    display: none;
+}
+
+.hamburger img {
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: var(--transition);
+}
+
+.close {
+    display: none;
+}
+
+.nav-links > ul {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.nav-link {
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+.nav-link > a {
+    color: var(--white);
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.nav-link.one {
+    opacity: 0;
+    transition: var(--transition);
+    animation: animateDisplay 0.8s linear 6.75s forwards;
+}
+
+.nav-link.two {
+    animation: animateUpwards 0.8s ease-in 6.5s;
+}
+
+.nav-link.three {
+    animation: animateUpwards 0.8s ease-in 6.75s;
+}
+
+.nav-link.four {
+    animation: animateUpwards 0.8s ease-in 7s;
+}
+
+.nav-link.five {
+    animation: animateUpwards 0.8s ease-in 7.25s;
+}
+
+.nav-link > a:hover {
+    color: var(--muted-green);
+}
+
+.nav-link > a.active {
+    color: var(--muted-green);
+}
+
+.displayed,
+.displayed-on-hover {
+    display: block;
+    padding: 0.5rem 0;
+    -webkit-transition: transform 0.7s cubic-bezier(0.165, 0.85, 0.45, 1);
+    transition: transform 0.7s cubic-bezier(0.165, 0.85, 0.45, 1);
+}
+
+.displayed {
+    transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -o-transform: translateY(0%);
+}
+
+.displayed-on-hover {
+    position: absolute;
+    top: 0;
+    transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -o-transform: translateY(100%);
+}
+
+.nav-link:hover .displayed {
+    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+}
+
+.nav-link:hover .displayed-on-hover {
+    transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -o-transform: translateY(0%);
+}
+
+.hamburger-react {
+    display: none;
+}
+
+@media screen and (min-width: 1280px) {
+    nav {
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .header {
+        font-size: 0.85rem;
+        padding: 2rem 2rem 1.5rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger-react {
+        display: block;
+    }
+
+    .nav-link > a {
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-link.five,
+    .nav-link.four,
+    .nav-link.three,
+    .nav-link.two {
+        animation: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .header {
+        padding: 0.5rem 0.5rem 0.25rem;
+        height: max-content;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .nav-link {
+        padding: 0.85rem 1.25rem 0.5rem;
+    }
+}
+
+.display {
+    display: flex;
+    position: absolute;
+    background-color: var();
+    top: 3.56rem;
+    right: 0;
+    justify-content: flex-end;
+    background-color: var(--warm-brown-transperent);
+    width: 100vw;
+}
+
+.display ul {
+    background-color: var(--warm-brown);
+    border-top: 0.25px solid var(--white);
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 12.5rem;
+}
+
+.display li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid var(--white);
+}
+
+.display li:first-child {
+    border-top: 1px solid var(--white);
+}

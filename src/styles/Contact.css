@@ -1,0 +1,207 @@
+.contact-container {
+    padding-bottom: 12rem;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2.5rem;
+}
+
+.form-and-send-button {
+    display: flex;
+    flex-direction: column;
+    width: 45rem;
+}
+
+button {
+    border: none;
+    color: inherit;
+    font: inherit;
+}
+
+button:focus {
+    outline: none;
+}
+
+.form-container {
+    background-color: var(--warm-brown);
+    border-radius: 0.5rem;
+    padding: 2rem;
+}
+
+.input-box,
+.text-area {
+    background-color: var(--white);
+    border-radius: 2.5rem;
+    display: flex;
+    justify-content: center;
+    height: 3rem;
+    position: relative;
+}
+
+.input-box > input,
+textarea {
+    border: none;
+    background-color: transparent;
+    color: var(--warm-brown);
+    font-size: var(--fs-md);
+    font-family: var(--ff-body);
+    padding-left: 1.25rem;
+    width: 100%;
+}
+
+::placeholder {
+    color: var(--warm-brown);
+    font-size: var(--fs-md);
+    font-family: var(--ff-body);
+}
+
+.input-box > input:focus,
+textarea:focus {
+    outline: none;
+}
+
+.full-width {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.name {
+    width: 25%;
+}
+
+.email {
+    width: 72.5%;
+}
+
+.subject {
+    margin: 1rem 0;
+}
+
+.text-area {
+    border-radius: 1rem;
+    min-height: 8rem;
+}
+
+textarea {
+    margin-top: 1rem;
+    resize: none;
+}
+
+.send {
+    align-self: center;
+    margin-top: 2.5rem;
+}
+
+.send > a {
+    color: var(--white);
+}
+
+input:focus .input-box {
+    background-color: var(--light-blue-input);
+}
+
+.error-message,
+.sent-message {
+    display: none;
+    font-size: var(--fs-md);
+    padding: 1rem;
+}
+
+.error-message {
+    color: rgb(252, 63, 63);
+}
+
+.sent-message {
+    color: rgb(86, 200, 86);
+}
+
+.error-message.display-message,
+.sent-message.display-message {
+    display: block;
+}
+
+@media screen and (max-width: 800px) {
+    .form-and-send-button {
+        width: 35rem;
+    }
+
+    .input-box > input,
+    textarea {
+        font-size: var(--fs-sl);
+    }
+
+    ::placeholder {
+        font-size: var(--fs-sl);
+    }
+
+    .error-message {
+        font-size: var(--fs-sl);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contact-container {
+        padding-bottom: 7rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .form-and-send-button {
+        width: 25rem;
+    }
+
+    .input-box {
+        height: 2.25rem;
+    }
+
+    .input-box > input,
+    textarea {
+        font-size: 0.75rem;
+    }
+
+    ::placeholder {
+        font-size: 0.75rem;
+    }
+
+    .input-box > input textarea {
+        padding-left: 1rem;
+    }
+
+    .send {
+        margin-top: 1.6rem;
+    }
+}
+
+@media screen and (max-width: 495px) {
+    .form-and-send-button {
+        width: 21.5rem;
+    }
+
+    .form-container {
+        padding: 1.25rem;
+    }
+
+    .full-width {
+        flex-direction: column;
+    }
+
+    .name,
+    .email {
+        width: 100%;
+    }
+
+    .name {
+        margin-bottom: 1rem;
+    }
+}
+
+@media screen and (max-width: 412px) {
+    .form-and-send-button {
+        width: 18rem;
+    }
+}

@@ -1,0 +1,182 @@
+#animated-intro {
+    background-color: var(--warm-brown);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    transition: background-color 1s cubic-bezier(0.25, 0.74, 0.64, 0.55);
+    z-index: 11111;
+    width: 100vw;
+    animation: change-color 1s ease-in forwards 5s;
+}
+
+.fade-out {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    animation: fade-out 5s ease-in-out forwards;
+}
+
+.container {
+    position: relative;
+    height: 220px;
+    width: 220px;
+    filter: url(#gooey);
+    animation: animate 5s linear infinite;
+}
+
+.first {
+    --i: 1;
+}
+
+.second {
+    --i: 2;
+}
+
+.third {
+    --i: 3;
+}
+
+.fourth {
+    --i: 4;
+}
+
+.fifth {
+    --i: 5;
+}
+
+.sixth {
+    --i: 6;
+}
+
+.seventh {
+    --i: 7;
+}
+
+.eighth {
+    --i: 8;
+}
+
+.rotate-first {
+    --j: 1;
+}
+
+.rotate-second {
+    --j: 2;
+}
+
+.rotate-third {
+    --j: 3;
+}
+
+.rotate-fourth {
+    --j: 4;
+}
+
+.container span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    transform: rotate(calc(45deg * var(--i)));
+}
+
+.container span::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: calc(50% - 17.5px);
+    width: 35px;
+    height: 35px;
+    background: linear-gradient(45deg, #e6f7e7, #0c882f);
+    border-radius: 50%;
+    box-shadow: 0 0 30px var(--muted-green);
+}
+
+.rotate {
+    animation: animate 3s ease-in-out infinite;
+    animation-delay: calc(2s + (-0.15s * var(--j)));
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes change-color {
+    0% {
+        background-color: var(--warm-brown);
+    }
+
+    100% {
+        background-color: var(--warm-brown);
+    }
+}
+
+svg {
+    width: 0;
+    height: 0;
+}
+
+.welcome {
+    color: #e6f7f6;
+    font-size: 2rem;
+    font-family: "Space Grotesk", Helvetica, sans-serif;
+    font-weight: 400;
+    display: block;
+    position: absolute;
+    top: 50%;
+}
+
+@media screen and (max-width: 768px) {
+    .welcome {
+        font-size: 0.875rem;
+    }
+
+    .container {
+        height: 175px;
+        width: 175px;
+    }
+
+    .container span::before {
+        left: calc(50% - 15px);
+        height: 30px;
+        width: 30px;
+    }
+}

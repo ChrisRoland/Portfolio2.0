@@ -1,0 +1,166 @@
+/* ======================
+    ||css variables||
+==================== */
+:root {
+    /* Primary color */
+    --warm-brown: #8B4513;
+    --muted-green: #D2B48C;
+    --soft-cream: #F5F5DC;
+    --beige: #D2B48C;
+    --warm-brown-transperent: rgba(139, 69, 19, 0.77); /* Adjusting for transparency */
+    
+    /* Neutral color */
+    --grayish-pink: #ebd1de; /* Retaining this as no new neutral provided */
+    --pink: #e7b6cf; /* Retaining this as no new pink provided */
+    --grayish-pink-transperent: #ebd1de67;
+    --blue-white: #e6f7f6; /* Retaining this as no specific replacement provided */
+    --white: #ffffff;
+
+    /* Font size */
+    --fs-xl: 1.65rem;
+    --fs-ll: 1.5rem;
+    --fs-l: 1.1rem;
+    --fs-md: 0.9rem;
+    --fs-sl: 0.675rem;
+    --fs-xsl: 0.6rem;
+
+    /* Font Weight */
+    --fw-xbold: 800;
+    --fw-bold: 700;
+    --fw-semibold: 600;
+    --fw-medium: 500;
+    --fw-regular: 400;
+    --fw-light: 300;
+
+    /* Font Family */
+    --ff-body: "Raleway", Helvetica;
+    --ff-heading: "Space Grotesk", Helvetica;
+
+    /* Transition */
+    --transition: all 0.4s cubic-bezier(0.65, 0.05, 0.38, 0.94);
+}
+
+/* Scroll Bar */
+
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--soft-cream);
+    border-radius: 1rem;
+    margin-block: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--warm-brown);
+    border-radius: 1rem;
+    border: 0.15rem solid var(--soft-cream);
+}
+
+@supports (scrollbar-color: red blue) {
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: var(--warm-brown) var(--soft-cream);
+        scroll-behavior: smooth;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: var(--ff-body);
+    font-size: var(--fs-md);
+    font-weight: var(--fw-regular);
+    overflow-x: hidden;
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.margin-container {
+    margin: auto;
+    max-width: 1200px;
+}
+
+.strokes {
+    position: relative;
+    margin-bottom: 5rem;
+}
+
+.strokes::after {
+    background-color: rgba(0, 0, 0, 0.214);
+    bottom: -4rem;
+    content: "";
+    display: block;
+    height: 1px;
+    margin: 0 auto;
+    max-width: 1200px;
+    position: absolute;
+    width: 100%;
+}
+
+.h2-heading {
+    font-family: var(--ff-heading);
+    font-weight: 700;
+    padding: 1.5rem 0;
+}
+
+.heading-and-image {
+    display: flex;
+}
+
+.h2-heading::after {
+    background-color: var(--muted-green);
+    content: "";
+    display: block;
+    margin-top: 0.4rem;
+    height: 0.2rem;
+    width: 5rem;
+}
+
+.h2-heading h2 {
+    font-size: var(--fs-xl);
+    color: var(--muted-green);
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: var(--transition);
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+    transition: var(--transition);
+}
+
+.button {
+    background-color: var(--muted-green);
+    color: var(--white);
+    display: block;
+    border-radius: 2rem;
+    margin-left: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.button:hover {
+    opacity: 0.7;
+}
+
+.button:active {
+    transform: translateY(0.5rem);
+}
+
+/* Other animations and media queries remain the same */
